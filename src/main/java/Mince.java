@@ -26,11 +26,11 @@ public class Mince extends JFrame{
         JButton submit = new JButton("vypočítat");
         submit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (!(textovePole.getText().equals(""))) {
+                if (!(textovePole.getText().equals(""))&&((int)Double.parseDouble(textovePole.getText())>0)) {
                     String sHodnota = textovePole.getText();
                     vypocet((int) Double.parseDouble(sHodnota));
                 } else {
-                    System.out.println("Pole je prázdné!");
+                    System.out.println("Chyba vstupu");
                 }
             }
         });
@@ -58,47 +58,47 @@ public class Mince extends JFrame{
         }
         JTable tabulka = new JTable(model);
         while (hodnota != 0) {
-            if (hodnota / 5000 >= 1) {
+            if (hodnota>=5000) {
                 int petK = hodnota / 5000;
                 hodnota = hodnota - (petK * 5000);
                 model.insertRow(0, new Object[]{"bankovka", "5000kč", petK});
-            } else if (hodnota / 2000 >= 1) {
+            } else if (hodnota>=2000) {
                 int dveK = hodnota / 2000;
                 hodnota = hodnota - (dveK * 2000);
                 model.insertRow(0, new Object[]{"bankovka", "2000kč", dveK});
-            } else if (hodnota / 1000 >= 1) {
+            } else if (hodnota>=1000) {
                 int jednaK = hodnota / 1000;
                 hodnota = hodnota - (jednaK * 1000);
                 model.insertRow(0, new Object[]{"bankovka", "1000kč", jednaK});
-            } else if (hodnota / 500 >= 1) {
+            } else if (hodnota>=500) {
                 int petS = hodnota / 500;
                 hodnota = hodnota - (petS * 500);
                 model.insertRow(0, new Object[]{"bankovka", "500kč", petS});
-            } else if (hodnota / 200 >= 1) {
+            } else if (hodnota>=200) {
                 int dveS = hodnota / 200;
                 hodnota = hodnota - (dveS * 200);
                 model.insertRow(0, new Object[]{"bankovka", "200kč", dveS});
-            } else if (hodnota / 100 >= 1) {
+            } else if (hodnota>=100) {
                 int jednaS = hodnota / 100;
                 hodnota = hodnota - (jednaS * 100);
                 model.insertRow(0, new Object[]{"bankovka", "100kč", jednaS});
-            } else if (hodnota / 50 >= 1) {
+            } else if (hodnota>=50) {
                 int pade = hodnota / 50;
                 hodnota = hodnota - (pade * 50);
                 model.insertRow(0, new Object[]{"mince", "50kč", pade});
-            } else if (hodnota / 20 >= 1) {
+            } else if (hodnota>=20) {
                 int dvacet = hodnota / 20;
                 hodnota = hodnota - (dvacet * 20);
                 model.insertRow(0, new Object[]{"mince", "20kč", dvacet});
-            } else if (hodnota / 10 >= 1) {
+            } else if (hodnota>=10) {
                 int deset = hodnota / 10;
                 hodnota = hodnota - (deset * 10);
                 model.insertRow(0, new Object[]{"mince", "10kč", deset});
-            } else if (hodnota / 5 >= 1) {
+            } else if (hodnota>=5) {
                 int pet = hodnota / 5;
                 hodnota = hodnota - (pet * 5);
                 model.insertRow(0, new Object[]{"mince", "5kč", pet});
-            } else if (hodnota / 2 >= 1) {
+            } else if (hodnota>=2) {
                 int dve = hodnota / 2;
                 hodnota = hodnota - (dve * 2);
                 model.insertRow(0, new Object[]{"mince", "2kč", dve});
