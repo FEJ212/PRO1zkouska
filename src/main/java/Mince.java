@@ -24,22 +24,16 @@ public class Mince extends JFrame{
             }
         });
         JButton submit = new JButton("vypočítat");
-        submit.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if (!(textovePole.getText().equals(""))&&((int)Double.parseDouble(textovePole.getText())>0)) {
-                    String sHodnota = textovePole.getText();
-                    vypocet((int) Double.parseDouble(sHodnota));
-                } else {
-                    System.out.println("Chyba vstupu");
-                }
+        submit.addActionListener(e -> {
+            if (!(textovePole.getText().isEmpty())&&((int)Double.parseDouble(textovePole.getText())>0)) {
+                vypocet((int) Double.parseDouble(textovePole.getText()));
+            } else {
+                System.out.println("Chyba vstupu");
             }
         });
         JButton vycetka = new JButton("výčetka");
-        vycetka.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String sHodnota = textovePole.getText();
-                ukladani.zapis(tabulka);
-            }
+        vycetka.addActionListener(e -> {
+            ukladani.zapis(tabulka);
         });
         JLabel popis = new JLabel("Zadejte finanční hodnotu: ");
         panelUI.add(popis);
