@@ -1,4 +1,4 @@
-import funkce.ukladani;
+import funkce.Ukladani;
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.JTable;
@@ -7,8 +7,8 @@ import javax.swing.JScrollPane;
 import java.awt.event.*;
 
 public class Mince extends JFrame{
-    DefaultTableModel model = new DefaultTableModel();
-    JTable tabulka = new JTable(model);
+    public DefaultTableModel model = new DefaultTableModel();
+    public JTable tabulka = new JTable(model);
     public static void main(String [] args) {
         new Mince();
     }
@@ -32,7 +32,7 @@ public class Mince extends JFrame{
             }
         });
         JButton vycetka = new JButton("výčetka");
-        vycetka.addActionListener(e -> ukladani.zapis(tabulka));
+        vycetka.addActionListener(e -> Ukladani.zapis(tabulka));
         JLabel popis = new JLabel("Zadejte finanční hodnotu: ");
         panelUI.add(popis);
         panelUI.add(textovePole);

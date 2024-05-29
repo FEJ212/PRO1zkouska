@@ -3,7 +3,7 @@ import javax.swing.*;
 import javax.swing.filechooser.*;
 import java.io.*;
 
-public class ukladani {
+public class Ukladani {
     public static void zapis(JTable tabulka){
         try {
             JFileChooser fileChooser = new JFileChooser();
