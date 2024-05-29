@@ -32,9 +32,7 @@ public class Mince extends JFrame{
             }
         });
         JButton vycetka = new JButton("výčetka");
-        vycetka.addActionListener(e -> {
-            ukladani.zapis(tabulka);
-        });
+        vycetka.addActionListener(e -> ukladani.zapis(tabulka));
         JLabel popis = new JLabel("Zadejte finanční hodnotu: ");
         panelUI.add(popis);
         panelUI.add(textovePole);
